@@ -1,0 +1,68 @@
+@import "reset";
+
+/* ==================================================
+  Global Styles
+  ================================================== */
+
+@import "abstracts/variables";
+@import "abstracts/breakpoints";
+
+/* Base Styles
+   ================================================== */
+
+@font-face {
+  font-family: "poppins";
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+  src: local("Poppins-Regular"),
+    url("../fonts/poppins/Poppins-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "poppins";
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+  src: local("Poppins-Bold"), url("../fonts/poppins/Poppins-Bold.ttf") format("truetype");
+}
+
+body {
+  font-family: "poppins", sans-serif;
+  font-size: var(--step-0);
+  font-weight: 400;
+}
+
+h1 {
+  max-inline-size: 15ch;
+  font-size: var(--step-8);
+}
+
+h2 {
+  font-size: var(--step-4);
+}
+
+h3 {
+  font-size: var(--step-2);
+}
+
+/* ==================================================
+  Utilities
+  ================================================== */
+
+@import "utilities/center-content";
+@import "utilities/container";
+@import "utilities/cta";
+@import "utilities/flow-content";
+@import "utilities/flow-section";
+@import "utilities/outline";
+@import "utilities/skip-link";
+@import "utilities/split";
+@import "utilities/visually-hidden";
+
+/* ==================================================
+   Blocks
+   ================================================== */
+
+@import "blocks/navigation";
+@import "blocks/footer";

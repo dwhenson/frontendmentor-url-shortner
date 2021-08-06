@@ -1,0 +1,30 @@
+/* Text accessible only for screen readers */
+.visually-hidden {
+  position: absolute !important;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  clip: rect(0 0 0 0);
+}
+
+.visually-hidden:hover,
+.visually-hidden:active,
+.visually-hidden:focus {
+  z-index: 100000;
+  display: block;
+  inset-block-start: 5px;
+  inset-inline-start: 5px;
+  inline-size: auto;
+  block-size: auto;
+  padding: 15px 23px 14px;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  background-color: hsla(0, 0%, 0%, 1);
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: normal;
+  text-decoration: none;
+  color: #fff;
+  clip: auto !important;
+}

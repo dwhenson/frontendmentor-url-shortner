@@ -1,0 +1,92 @@
+/* ==================================================
+   Andy Bell Modern CSS Reset
+   ================================================== */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd,
+ul,
+ol {
+  margin: 0;
+}
+
+/* Adjust line heights */
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+  line-height: 1.1;
+}
+
+/* Remove list styles on ul, ol elements with a class */
+:where(ul[role="list"]),
+:where(ol[role="list"]) {
+  list-style-type: none;
+  padding-inline: 0;
+}
+
+/* Set core root defaults */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-block-size: 100vh;
+  background-color: #fff;
+  line-height: 1.5;
+  color: #000;
+  text-rendering: optimizeSpeed;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  display: block;
+  max-inline-size: 100%;
+}
+
+img[width] {
+  inline-size: auto; /* Defer to max-width */
+}
+
+img[width][height] {
+  block-size: auto; /* Preserve aspect ratio */
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}

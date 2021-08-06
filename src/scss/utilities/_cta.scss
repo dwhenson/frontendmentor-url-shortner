@@ -1,0 +1,19 @@
+.cta {
+  display: inline-block;
+  max-inline-size: fit-content;
+  padding: 0.5em 1.5em 0.6em;
+  border: 0;
+  border-radius: 1em;
+  background-color: var(--clr-primary-100);
+  font-weight: 700;
+  color: var(--clr-neutral-100);
+  cursor: pointer;
+
+  &:hover {
+    background-color: hsla(180, 66%, 49%, 0.75);
+  }
+
+  .js-completed {
+    background-color: var(--clr-neutral-400);
+  }
+}

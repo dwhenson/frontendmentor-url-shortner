@@ -1,0 +1,38 @@
+{
+  "author": "Dave Henson",
+  "description": "FEM Challenge - URL shortener",
+  "version": "1.0.0",
+  "keywords": [],
+  "name": "url-shortener",
+  "main": "index.html",
+  "scripts": {},
+  "license": "ISC",
+  "optionalDependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.27.5",
+    "browserslist": "^4.16.7",
+    "eslint": "^7.29.0",
+    "eslint-config-healthier": "^3.2.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-compat": "^3.11.1",
+    "eslint-plugin-html": "^6.1.2",
+    "eslint-plugin-unicorn": "^34.0.1",
+    "gulp": "^4.0.2",
+    "gulp-esbuild": "^0.8.4",
+    "gulp-sass": "^5.0.0",
+    "healthier": "^4.0.0",
+    "prettier": "^2.3.1",
+    "sass": "^1.37.0",
+    "stylelint": "^13.13.1",
+    "stylelint-high-performance-animation": "^1.5.2",
+    "stylelint-no-unsupported-browser-features": "^5.0.1",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.18.0",
+    "stylelint-use-logical-spec": "^3.2.0"
+  },
+  "browserslist": [
+    "safari 14",
+    "chrome 95",
+    "firefox 92"
+  ]
+}
