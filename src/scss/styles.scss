@@ -47,10 +47,15 @@ h3 {
 }
 
 /* ==================================================
+  Composition
+  ================================================== */
+
+@import "composition/center-content";
+
+/* ==================================================
   Utilities
   ================================================== */
 
-@import "utilities/center-content";
 @import "utilities/container";
 @import "utilities/cta";
 @import "utilities/flow-content";

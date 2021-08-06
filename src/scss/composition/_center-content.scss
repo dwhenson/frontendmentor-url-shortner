@@ -9,5 +9,10 @@ $max: 1440px;
 
   > * {
     grid-column: 2;
+    block-size: min-content;
+  }
+
+  > footer {
+    align-self: end;
   }
 }
