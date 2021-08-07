@@ -1,0 +1,36 @@
+.submit {
+  .url-form {
+    // align-items: center;
+    padding: clamp(1rem, 5vw, 2rem);
+    border-radius: 0.5em;
+    background-color: var(--clr-neutral-300);
+    background-image: url("../../images/bg-shorten-mobile.svg");
+    background-position: top right;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    @include respond-to("medium") {
+      background-image: url("../../images/bg-shorten-desktop.svg");
+
+      > * {
+        flex: unset;
+      }
+    }
+
+    input {
+      max-inline-size: 100%;
+      padding: 0.5em 1em;
+      border-radius: 0.5em;
+    }
+  }
+
+  .cta {
+    align-self: center;
+    inline-size: min(100%, 20rem);
+    border-radius: 0.5em;
+
+    @include respond-to("medium") {
+      inline-size: 10rem;
+    }
+  }
+}
