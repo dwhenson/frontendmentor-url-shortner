@@ -1,0 +1,17 @@
+.intro {
+  align-items: center;
+  gap: 2rem;
+
+  @include respond-to("medium") {
+    flex-direction: row-reverse;
+  }
+
+  // FIXME svg width and position
+  svg defs {
+    // max-inline-size: 100%;
+  }
+
+  .cta {
+    margin-block-start: 2rem;
+  }
+}
