@@ -31,6 +31,11 @@ body {
   font-family: "poppins", sans-serif;
   font-size: var(--step-0);
   font-weight: 400;
+  text-align: center;
+
+  @include respond-to("medium") {
+    text-align: start;
+  }
 }
 
 h1 {
@@ -80,4 +85,6 @@ a {
    ================================================== */
 
 @import "blocks/navigation";
+@import "blocks/intro";
+@import "blocks/submit";
 @import "blocks/footer";
