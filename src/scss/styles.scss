@@ -46,11 +46,21 @@ h3 {
   font-size: var(--step-2);
 }
 
+a {
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--clr-neutral-200);
+
+  &:hover {
+    color: var(--clr-neutral-500);
+  }
+}
+
 /* ==================================================
   Composition
   ================================================== */
 
-@import "composition/center-content";
+@import "composition/align-content";
 
 /* ==================================================
   Utilities
