@@ -1,0 +1,18 @@
+.boost {
+  padding-block-start: 4rem;
+  padding-block-end: 4rem;
+  background-color: var(--clr-primary-200);
+  background-image: url("../../images/bg-boost-mobile.svg");
+  background-position: center right;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+
+  @include respond-to("medium") {
+    background-image: url("../../images/bg-boost-desktop.svg");
+  }
+
+  h2 {
+    color: var(--clr-neutral-100);
+  }
+}
