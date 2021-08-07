@@ -32,10 +32,17 @@ body {
   font-size: var(--step-0);
   font-weight: 400;
   text-align: center;
+  color: var(--clr-neutral-300);
 
   @include respond-to("medium") {
     text-align: start;
   }
+}
+
+h1,
+h2,
+h3 {
+  color: var(--clr-neutral-400);
 }
 
 h1 {
@@ -57,7 +64,7 @@ a {
   color: var(--clr-neutral-200);
 
   &:hover {
-    color: var(--clr-neutral-500);
+    color: var(--clr-neutral-400);
   }
 }
 
