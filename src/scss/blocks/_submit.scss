@@ -3,7 +3,7 @@
     // align-items: center;
     padding: clamp(1rem, 5vw, 2rem);
     border-radius: 0.5em;
-    background-color: var(--clr-neutral-300);
+    background-color: var(--clr-primary-200);
     background-image: url("../../images/bg-shorten-mobile.svg");
     background-position: top right;
     background-size: contain;
@@ -21,12 +21,16 @@
       max-inline-size: 100%;
       padding: 0.5em 1em;
       border-radius: 0.5em;
+
+      &::placeholder {
+        color: var(--clr-neutral-200);
+      }
     }
   }
 
   .cta {
     align-self: center;
-    inline-size: min(100%, 20rem);
+    inline-size: min(100%, 25rem);
     border-radius: 0.5em;
 
     @include respond-to("medium") {
