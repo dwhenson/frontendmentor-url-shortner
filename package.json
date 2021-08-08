@@ -19,6 +19,7 @@
     "eslint-plugin-unicorn": "^34.0.1",
     "gulp": "^4.0.2",
     "gulp-esbuild": "^0.8.4",
+    "gulp-notify": "^4.0.0",
     "gulp-sass": "^5.0.0",
     "healthier": "^4.0.0",
     "prettier": "^2.3.1",

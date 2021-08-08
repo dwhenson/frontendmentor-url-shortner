@@ -4,6 +4,8 @@ const browserSync = require("browser-sync").create();
 // Create esbuild incremental workflow
 const { createGulpEsbuild } = require("gulp-esbuild");
 const gulpEsbuild = createGulpEsbuild({ incremental: true });
+// Notify
+var notify = require("gulp-notify");
 
 // Set up file paths
 const paths = {
@@ -42,6 +44,7 @@ function cssDevelopmentTask() {
   return src(paths.scss.src)
     .pipe(sass.sync().on("error", sass.logError))
     .pipe(dest(paths.scss.dest))
+    .pipe(notify({ message: "Styles task complete" }))
     .pipe(browserSync.stream());
 }
 
