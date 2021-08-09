@@ -42,9 +42,15 @@ function htmlDevelopmentTask() {
 // Combine and add css file to dist (and update browser)
 function cssDevelopmentTask() {
   return src(paths.scss.src)
-    .pipe(sass.sync().on("error", sass.logError))
+    .pipe(
+      sass.sync().on(
+        "error",
+        notify.onError(function (error) {
+          return "SCSS error: " + error.message;
+        })
+      )
+    )
     .pipe(dest(paths.scss.dest))
-    .pipe(notify({ message: "Styles task complete" }))
     .pipe(browserSync.stream());
 }
 
