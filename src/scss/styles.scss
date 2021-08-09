@@ -28,6 +28,7 @@
 }
 
 body {
+  background-color: var(--clr-neutral-200);
   font-family: "poppins", sans-serif;
   font-size: var(--step-0);
   font-weight: 400;
@@ -55,13 +56,13 @@ h2 {
 }
 
 h3 {
-  font-size: var(--step-2);
+  font-size: var(--step-1);
 }
 
 a {
   font-weight: 700;
   text-decoration: none;
-  color: var(--clr-neutral-200);
+  color: var(--clr-neutral-300);
 
   &:hover {
     color: var(--clr-neutral-400);
@@ -95,5 +96,6 @@ a {
 @import "blocks/intro";
 @import "blocks/submit";
 @import "blocks/statistics";
+@import "blocks/features";
 @import "blocks/boost";
 @import "blocks/footer";

@@ -1,5 +1,5 @@
 /* Add left and right padding to element */
 // CHECK Consider removing all containers?
 .container {
-  // padding-inline: clamp(1rem, 5vw, 2rem);
+  padding-inline: clamp(1rem, 5vw, 2rem);
 }

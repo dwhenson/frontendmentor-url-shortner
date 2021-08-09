@@ -1,11 +1,11 @@
 .cta {
   display: inline-block;
-  padding: 0.5em 1.5em 0.6em;
+  padding: 0.6em 1.5em 0.5em;
   border: 0;
-  border-radius: 1em;
+  border-radius: 2em;
   background-color: var(--clr-primary-100);
   font-weight: 700;
-  color: var(--clr-neutral-100);
+  color: var(--clr-neutral-200);
   cursor: pointer;
 
   &:hover {
