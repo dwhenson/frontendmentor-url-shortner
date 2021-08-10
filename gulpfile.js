@@ -103,7 +103,7 @@ exports.default = series(
   parallel(
     htmlDevelopmentTask,
     cssDevelopmentTask,
-    jsDevelopmentTask,
+    // jsDevelopmentTask,
     imgDevelopmentTask,
     fontDevelopmentTask
   ),

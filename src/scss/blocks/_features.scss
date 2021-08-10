@@ -16,8 +16,6 @@
     transform: translateX(-50%) rotate(90deg);
 
     @include respond-to("medium") {
-      // inset-block-start: 30rem;
-      // inline-size: calc(100% - clamp(2rem, 10vw, 4rem));
       inset-inline-start: 4rem;
       inline-size: 80%;
       transform: translateX(0) rotate(0);

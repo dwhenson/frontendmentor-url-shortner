@@ -1,163 +1,41 @@
-// /* 	Footer
-//    	================================================== */
+/*  Footer
+    ================================================== */
 
-// .footer {
-//   grid-column: 1 / -1;
-//   padding-block: 3rem;
-//   margin-block-start: 0;
-//   background-color: var(--clr-neutral-400);
-//   color: var(--clr-neutral-100);
+.footer {
+  display: grid;
+  grid-column: 1 / -1;
+  padding-block-start: clamp(1rem, 5vw, 2rem);
+  background-color: var(--clr-neutral-400);
+  color: var(--clr-neutral-100);
 
-//   > .container.split {
-//     flex-direction: column-reverse;
-//     gap: 2rem;
+  > .split {
+    gap: 3rem;
+  }
 
-//     @include respond-to("medium") {
-//       flex-direction: row;
-//     }
+  nav {
+    gap: 3rem;
 
-//     @include respond-to("large") {
-//       gap: 12rem;
-//     }
-//   }
+    li:first-of-type {
+      font-weight: 700;
+    }
 
-//   .flow-content > * + * {
-//     margin-block-start: 1rem;
-//   }
+    a {
+      font-weight: inherit;
+      color: var(--clr-neutral-100);
+    }
+  }
 
-//   a {
-//     color: var(--clr-neutral-100);
+  .icons ul {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 
-//     &:hover:not(.cta) {
-//       color: var(--clr-primary-100);
-//     }
+    li {
+      flex: revert;
+    }
 
-//     &[aria-current="page"] {
-//       color: var(--clr-primary-100);
-//     }
-//   }
-
-//   .navigation {
-//     flex-basis: 30%;
-//     flex-direction: column-reverse;
-//     gap: 2rem;
-
-//     @include respond-to("medium") {
-//       flex-direction: row;
-//     }
-
-//     .images {
-//       display: flex;
-//       flex-direction: column-reverse;
-//       justify-content: space-between;
-//       gap: 2rem;
-
-//       @include respond-to("medium") {
-//         flex-direction: column;
-//       }
-
-//       .logo {
-//         margin-block-start: 2rem;
-//         margin-inline: auto;
-
-//         @include respond-to("medium") {
-//           margin-block-start: 0;
-//         }
-
-//         @include respond-to("medium") {
-//           margin-inline: 0 auto;
-//         }
-
-//         svg .text {
-//           fill: var(--clr-neutral-100);
-//         }
-//       }
-
-//       .icons {
-//         display: flex;
-//         justify-content: space-around;
-//         gap: 0.75em;
-//         margin-block-start: 2rem;
-
-//         @include respond-to("medium") {
-//           justify-content: flex-start;
-
-//           svg {
-//             transform: scale(1);
-//           }
-//         }
-
-//         svg {
-//           transform: scale(1.5);
-//         }
-
-//         svg:hover path {
-//           fill: var(--clr-primary-100);
-//         }
-//       }
-//     }
-
-//     .nav-inner {
-//       display: flex;
-//       justify-content: space-around;
-//       gap: 1em;
-//       text-align: start;
-
-//       @include respond-to("medium") {
-//         justify-content: space-between;
-//       }
-//     }
-//   }
-
-//   .form {
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: space-between;
-
-//     form > .wrapper {
-//       display: flex;
-//       gap: 0.5rem;
-
-//       input {
-//         flex: 1;
-//         padding-inline-start: 1em;
-//         border: none;
-//         border-radius: 2em;
-//         line-height: 2.5em;
-
-//         &::placeholder {
-//           font-size: var(--step--1);
-//         }
-//       }
-
-//       .cta {
-//         max-inline-size: min-content;
-
-//         &:hover {
-//           box-shadow: none;
-//         }
-//       }
-//     }
-
-//     .validate {
-//       visibility: hidden;
-//       margin-inline-start: 1rem;
-//       font-size: var(--step--1);
-//     }
-
-//     .validate.error {
-//       visibility: revert;
-//       color: red;
-//     }
-//   }
-
-//   p.small {
-//     margin-block-start: 2rem;
-//     color: var(--clr-neutral-300);
-
-//     @include respond-to("medium") {
-//       margin-block-start: 0;
-//       text-align: end;
-//     }
-//   }
-// }
+    @include respond-to("medium") {
+      justify-content: flex-end;
+    }
+  }
+}
