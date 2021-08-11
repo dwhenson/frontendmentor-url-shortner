@@ -30,12 +30,12 @@
     align-items: center;
     justify-content: center;
 
-    li {
-      flex: revert;
-    }
-
     @include respond-to("medium") {
       justify-content: flex-end;
+    }
+
+    li {
+      flex: revert;
     }
   }
 }

@@ -30,42 +30,39 @@
     border-radius: 0.5em;
     background-color: var(--clr-neutral-100);
 
-    // FIXME svg size and padding
-    &::before {
+    &:nth-of-type(1) {
+      margin-block-start: 0;
+    }
+
+    &:nth-of-type(2) {
+      margin-block-start: 2rem;
+    }
+
+    &:nth-of-type(3) {
+      margin-block-start: 4rem;
+    }
+
+    .wrapper {
       position: absolute;
+      box-sizing: content-box;
       inset-block-start: 0;
       inset-inline-start: 50%;
-      padding: 0.75em 0.75em 0.25em;
+      place-items: center;
+      inline-size: 3rem;
+      block-size: 3rem;
+      padding: 0.75rem;
       border-radius: 50%;
       background-color: var(--clr-neutral-400);
       transform: translate(-50%, -50%);
 
       @include respond-to("medium") {
-        inset-inline-start: clamp(2rem, 10vw, 4rem);
+        inset-inline-start: revert;
+        transform: translate(0, -50%);
       }
-    }
 
-    &:nth-of-type(1) {
-      margin-block-start: 0;
-
-      &::before {
-        content: url("../images/icon-brand-recognition.svg");
-      }
-    }
-
-    &:nth-of-type(2) {
-      margin-block-start: 2rem;
-
-      &::before {
-        content: url("../images/icon-detailed-records.svg");
-      }
-    }
-
-    &:nth-of-type(3) {
-      margin-block-start: 4rem;
-
-      &::before {
-        content: url("../images/icon-fully-customizable.svg");
+      svg {
+        inline-size: 100%;
+        block-size: auto;
       }
     }
   }
