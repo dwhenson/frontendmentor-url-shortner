@@ -1,4 +1,8 @@
 .boost {
+  // FIXME side scrolling - scroll bar issues?
+  position: relative;
+  inline-size: 100vw;
+  max-inline-size: 100vw;
   padding-block-start: 4rem;
   padding-block-end: 4rem;
   background-color: var(--clr-primary-200);
@@ -7,6 +11,8 @@
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
+  inset-inline: 50%;
+  margin-inline: -50vw;
 
   @include respond-to("medium") {
     background-image: url("../../images/bg-boost-desktop.svg");

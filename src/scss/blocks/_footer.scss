@@ -5,6 +5,7 @@
   display: grid;
   grid-column: 1 / -1;
   padding-block-start: clamp(1rem, 5vw, 2rem);
+  margin-block-start: 0;
   background-color: var(--clr-neutral-400);
   color: var(--clr-neutral-100);
 

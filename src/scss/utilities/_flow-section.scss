@@ -1,6 +1,6 @@
 /* Add vertical rhythm between sections */
 
-.flow-section > * + *:not(header) {
+.flow-section > * + *:not(header, footer) {
   margin-block-start: 5rem;
 
   @include respond-to("medium") {
