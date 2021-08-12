@@ -25,13 +25,8 @@
   }
 
   .cta {
-    // align-self: center;
     min-inline-size: 10rem;
     border-radius: 0.5em;
     flex-grow: 1;
-
-    @include respond-to("medium") {
-      // max-inline-size: 10rem;
-    }
   }
 }
