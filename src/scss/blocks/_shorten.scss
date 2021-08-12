@@ -1,0 +1,37 @@
+.shorten {
+  .url-form {
+    flex-wrap: wrap;
+    padding: clamp(1rem, 5vw, 2rem);
+    border-radius: 0.5em;
+    background-color: var(--clr-primary-200);
+    background-image: url("../../images/bg-shorten-mobile.svg");
+    background-position: top right;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    @include respond-to("medium") {
+      background-image: url("../../images/bg-shorten-desktop.svg");
+    }
+  }
+
+  input {
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    flex-grow: 9999;
+
+    &::placeholder {
+      color: var(--clr-neutral-300);
+    }
+  }
+
+  .cta {
+    // align-self: center;
+    min-inline-size: 10rem;
+    border-radius: 0.5em;
+    flex-grow: 1;
+
+    @include respond-to("medium") {
+      // max-inline-size: 10rem;
+    }
+  }
+}
