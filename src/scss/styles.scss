@@ -47,8 +47,13 @@ h3 {
 }
 
 h1 {
+  margin-inline: auto;
   max-inline-size: 15ch;
   font-size: var(--step-8);
+
+  @include respond-to("medium") {
+    margin-inline-start: 0;
+  }
 }
 
 h2 {
