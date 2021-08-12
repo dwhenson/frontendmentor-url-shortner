@@ -2,6 +2,7 @@
   position: relative;
 
   ul {
+    align-items: flex-start;
     gap: 3rem;
   }
 
@@ -24,7 +25,7 @@
 
   li {
     position: relative;
-    block-size: min-content;
+    min-block-size: 22rem;
     padding-block-start: 4rem;
     padding-block-end: clamp(1rem, 5vw, 2rem);
     border-radius: 0.5em;

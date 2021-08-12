@@ -3,7 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
     <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -13,7 +18,7 @@
 
   <body class="center-content">
     <header class="center-content header">
-      <div class="">
+      <div class=""> <!-- CHECK -->
         <a href="#main" class="skip-link">Skip to content</a>
         <div class="split container site-head__inner">
           <a href="/" aria-label="Shortly" class="logo">
@@ -41,28 +46,37 @@
 
     <main id="main" class="flow-section">
       <section class="center-content container intro">
-          <div class="split"> <!-- Rename to intro-inner? -->
-            <div class="flow-content wrapper"> <!-- Wrap h1 and following content -->
-              <h1>More than just shorter links</h1>
-              <p>
-                Build your brand’s recognition and get detailed insights on how your links
-                are performing.
-              </p>
-              <a href="/" class="cta">Get Started</a>
-            </div>
-            <div class="wrapper"> <!-- Wrap svg -->
-              <img
-                src="images/illustration-working.svg"
-                alt="Graphic showing a person working at a computer behind a desk"
-              />
-            </div>
-          </div> <!-- End split -->
+        <div class="split">
+          <!-- Rename to intro-inner? -->
+          <div class="flow-content wrapper">
+            <!-- Wrap h1 and following content -->
+            <h1>More than just shorter links</h1>
+            <p>
+              Build your brand’s recognition and get detailed insights on how
+              your links are performing.
+            </p>
+            <a href="/" class="cta">Get Started</a>
+          </div>
+          <div class="wrapper">
+            <!-- Wrap svg -->
+            <img
+              src="images/illustration-working.svg"
+              alt="Graphic showing a person working at a computer behind a desk"
+            />
+          </div>
+        </div>
+        <!-- End split -->
       </section>
 
-      <section class="container flow-content submit">
+      <section class="container flow-content shorten">
         <form class="split url-form">
           <label class="visually-hidden" for="url">Enter url to shorten</label>
-          <input type="text" name="url" id="url" placeholder="Shorten a link here..." />
+          <input
+            type="text"
+            name="url"
+            id="url"
+            placeholder="Shorten a link here..."
+          />
           <button class="cta">Shorten It!</button>
         </form>
         <div class="error" hidden>Please add a link</div>
@@ -74,8 +88,8 @@
       <section class="container flow-content statistics">
         <h2>Advanced Statistics</h2>
         <p>
-          Track how your links are performing across the web with our advanced statistics
-          dashboard.
+          Track how your links are performing across the web with our advanced
+          statistics dashboard.
         </p>
       </section>
 
@@ -97,8 +111,9 @@
             </div>
             <h3>Brand Recognition</h3>
             <p>
-              Boost your brand recognition with each click. Generic links don’t mean a
-              thing. Branded links help instil confidence in your content.
+              Boost your brand recognition with each click. Generic links don’t
+              mean a thing. Branded links help instil confidence in your
+              content.
             </p>
           </li>
           <li class="flow-content container">
@@ -117,8 +132,9 @@
             </div>
             <h3>Detailed Records</h3>
             <p>
-              Gain insights into who is clicking your links. Knowing when and where people
-              engage with your content helps inform better decisions.
+              Gain insights into who is clicking your links. Knowing when and
+              where people engage with your content helps inform better
+              decisions.
             </p>
           </li>
           <li class="flow-content container">
@@ -137,8 +153,8 @@
             </div>
             <h3>Fully Customizable</h3>
             <p>
-              Improve brand awareness and content discoverability through customizable
-              links, supercharging audience engagement.
+              Improve brand awareness and content discoverability through
+              customizable links, supercharging audience engagement.
             </p>
           </li>
         </ul>
@@ -196,8 +212,9 @@
                   <path
                     fill="#FFF"
                     d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"
-                  /></svg
-              ></a>
+                  />
+                </svg>
+              </a>
             </li>
             <li>
               <a href="/" aria-label="Twitter"
