@@ -8,7 +8,7 @@
     background-position: top right;
     background-size: contain;
     background-repeat: no-repeat;
-    margin-block-start: -9rem;
+    margin-block-start: -9.5rem;
 
     @include respond-to("medium") {
       background-image: url("../../images/bg-shorten-desktop.svg");

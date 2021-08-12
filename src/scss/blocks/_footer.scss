@@ -32,6 +32,10 @@
     a {
       font-weight: inherit;
       color: var(--clr-neutral-100);
+
+      &:hover {
+        color: var(--clr-primary-100);
+      }
     }
   }
 
@@ -47,6 +51,10 @@
 
     li {
       flex: revert;
+    }
+
+    li:hover path {
+      fill: var(--clr-primary-100);
     }
   }
 }
