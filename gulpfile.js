@@ -18,7 +18,8 @@ const paths = {
     dest: "./dist/css",
   },
   js: {
-    src: "./src/js/*.js",
+    root: "./src/js/*.js",
+    src: "./src/js/**/*.js",
     dest: "./dist/js",
   },
   img: {
@@ -33,7 +34,6 @@ const paths = {
 
 /* Development
    ================================================== */
-
 // Copy html files to dist
 function htmlDevelopmentTask() {
   return src(paths.html.src).pipe(dest(paths.html.dest));
@@ -56,7 +56,7 @@ function cssDevelopmentTask() {
 
 // Combine and add js file to dist
 function jsDevelopmentTask() {
-  return src(paths.js.src)
+  return src(paths.js.root)
     .pipe(
       gulpEsbuild({
         bundle: true,
@@ -103,7 +103,7 @@ exports.default = series(
   parallel(
     htmlDevelopmentTask,
     cssDevelopmentTask,
-    // jsDevelopmentTask,
+    jsDevelopmentTask,
     imgDevelopmentTask,
     fontDevelopmentTask
   ),
