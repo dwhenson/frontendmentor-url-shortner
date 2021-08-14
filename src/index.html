@@ -13,12 +13,13 @@
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="css/styles.css" />
-    <script defer src="js/scripts.js"></script>
+    <script defer src="js/index.js"></script>
   </head>
 
   <body class="center-content">
     <header class="center-content header">
-      <div class=""> <!-- CHECK -->
+      <div class="">
+        <!-- CHECK if needed-->
         <a href="#main" class="skip-link">Skip to content</a>
         <div class="split container site-head__inner">
           <a href="/" aria-label="Shortly" class="logo">
@@ -69,17 +70,19 @@
       </section>
 
       <section class="container flow-content shorten">
-        <form class="split url-form">
+        <form id="form" class="split url-form">
           <label class="visually-hidden" for="url">Enter url to shorten</label>
           <input
-            type="text"
+            type="url"
             name="url"
             id="url"
+            required
+            aria-describedby="error"
             placeholder="Shorten a link here..."
           />
-          <button class="cta">Shorten It!</button>
+          <button id="submit" class="cta">Shorten It!</button>
         </form>
-        <div class="error" hidden>Please add a link</div>
+        <div id="error" class="error" aria-live="polite">Please enter a valid url</div>
         <div class="results">
           <ul role="list"></ul>
         </div>
