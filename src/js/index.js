@@ -1,7 +1,6 @@
 import burgerMenu from "./lib/burger-menu";
 import { form } from "./utils/elements";
-import { validateUrlSubmission } from "./lib/validation";
-import BurgerMenu from "./lib/burger-menu";
+import { validateUrlSubmission } from "./lib/check-url-input";
 
 // Add novaldiate to form
 form.setAttribute("novalidate", "");

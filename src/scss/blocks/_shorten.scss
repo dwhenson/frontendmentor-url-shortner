@@ -37,10 +37,35 @@
     position: absolute;
     display: none;
     inset-block-end: 0;
-    inline-size: 80%;
+    inline-size: 85%;
     padding-inline-start: 1rem;
     margin-block-end: 1rem;
     margin-inline-start: clamp(2rem, 5vw, 3rem);
+  }
+
+  .results {
+    li {
+      align-items: center;
+      justify-content: flex-end;
+      border-radius: 0.5rem;
+      background-color: var(--clr-neutral-100);
+      padding-block: clamp(0.5rem, 1.25vw, 0.75rem);
+    }
+
+    .original {
+      flex-grow: 9999;
+      color: var(--clr-neutral-500);
+    }
+
+    .short {
+      min-inline-size: max-content;
+      text-align: end;
+      color: var(--clr-primary-100);
+    }
+
+    .cta {
+      min-inline-size: 10rem;
+    }
   }
 
   /* Error states
