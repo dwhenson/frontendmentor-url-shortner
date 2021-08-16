@@ -1,32 +1,42 @@
 import { urlField, results } from "./../utils/elements";
-// import { showErrors } from "./check-url-input";
+import { showErrors } from "./check-url-input";
 
-// const endpoint = "https://api.shrtco.de/v2/shorten/?url=";
-const endpoint = "https://api.shrtco.de/v2/shorten?url=";
-
-/**
- * Checks response.ok, if true, converts to json (else throws an error)
- * @param  {string} response Unprocessed response from request
- * @return {array}           Response converted to JSON or rejected promise
- */
-function checkResponse(response) {
-  return response.ok ? response.json() : Promise.reject(new Error(response.status));
+function renderHTML(urls) {
+  results.innerHTML += urls
+    .map((url) => {
+      return `
+    <li class="split container">
+      <p class="original">${url.original_link}</p>
+      <p class="short">${url.full_short_link}</p>
+      <button class="cta">Copy</button>
+    </li>`;
+    })
+    .join("");
 }
 
-function renderHTML(url) {
-  results.innerHTML = `
-    <li class="split container">
-      <p class="original">${url.original_link}</p><p class="short">${url.full_short_link}</p><button class="cta">Copy</button>
-    </li>
-  `;
+function checkData(data) {
+  if (data.ok) {
+    const url = [];
+    renderHTML([...url, data.result]);
+  } else {
+    showErrors(data.error);
+    console.warn(data);
+  }
+}
+
+function fetchError(error) {
+  showErrors("Service is down - please try back later");
+  console.warn(error);
 }
 
 /**
  * Fetches quotes from the API
  */
-export async function fetchShortUrl(url) {
-  const response = await fetch(`${endpoint}${urlField.value}`);
-  const data = await checkResponse(response);
-  renderHTML(data.result);
-  console.log(data.result);
+export function fetchShortUrl() {
+  console.log("clicked");
+  fetch(`https://api.shrtco.de/v2/shorten?url=${urlField.value}`)
+    // fetch(`notaurl`)
+    .then((response) => response.json())
+    .then((data) => checkData(data))
+    .catch((error) => fetchError(error));
 }

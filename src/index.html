@@ -76,14 +76,16 @@
             type="url"
             name="url"
             id="url"
+            value="https://shrtco.de/"
             required
             aria-describedby="error"
             placeholder="Shorten a link here..."
           />
           <button id="submit" class="cta">Shorten It!</button>
+        <div id="error" class="error" aria-live="polite"></div>
         </form>
-        <div id="error" class="error" aria-live="polite">Please enter a valid url</div>
-          <ul id="results" class="results" role="list"></ul>
+        <ul id="results" class="flow-content results" role="list">
+        </ul>
       </section>
 
       <section class="container flow-content statistics">

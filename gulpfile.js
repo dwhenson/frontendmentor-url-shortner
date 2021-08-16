@@ -3,7 +3,7 @@ const sass = require("gulp-sass")(require("sass"));
 const browserSync = require("browser-sync").create();
 // Create esbuild incremental workflow
 const { createGulpEsbuild } = require("gulp-esbuild");
-const gulpEsbuild = createGulpEsbuild({ incremental: true });
+const gulpEsbuild = createGulpEsbuild({ incremental: true, piping: true });
 // Notify
 var notify = require("gulp-notify");
 
@@ -46,7 +46,16 @@ function cssDevelopmentTask() {
       sass.sync().on(
         "error",
         notify.onError(function (error) {
-          return "SCSS error: " + error.message;
+          return {
+            title: "SCSS ERR0R",
+            message:
+              "line " +
+              error.line +
+              " in " +
+              error.file.replace(/^.*[/\\]/, "") +
+              "\n" +
+              error.message,
+          };
         })
       )
     )
@@ -60,7 +69,15 @@ function jsDevelopmentTask() {
     .pipe(
       gulpEsbuild({
         bundle: true,
-      })
+      }).on(
+        "error",
+        notify.onError(function (error) {
+          return {
+            title: "ESBUILD ERROR",
+            message: error.message,
+          };
+        })
+      )
     )
     .pipe(dest(paths.js.dest));
 }

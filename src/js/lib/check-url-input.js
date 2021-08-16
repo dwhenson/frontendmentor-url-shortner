@@ -13,9 +13,10 @@ function validateOnChange(event) {
   }
 }
 
-export function showErrors() {
+export function showErrors(message = "Please enter a valid url") {
   errorField.classList.add("js-error");
   urlField.classList.add("js-error");
+  errorField.textContent = message;
   urlField.focus();
 }
 
@@ -27,7 +28,7 @@ export function validateUrlSubmission(event) {
   if (!validateUrl(urlField.value)) {
     showErrors();
   } else {
-    fetchShortUrl().catch(showErrors);
+    fetchShortUrl();
   }
   urlField.addEventListener("input", validateOnChange);
 }

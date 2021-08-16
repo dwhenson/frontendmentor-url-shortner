@@ -1,7 +1,6 @@
 .shorten {
-  position: relative;
-
   .url-form {
+    position: relative;
     flex-wrap: wrap;
     padding: clamp(2rem, 5vw, 3rem);
     border-radius: 0.5em;
@@ -37,10 +36,9 @@
     position: absolute;
     display: none;
     inset-block-end: 0;
-    inline-size: 85%;
+    max-inline-size: 95%;
     padding-inline-start: 1rem;
     margin-block-end: 1rem;
-    margin-inline-start: clamp(2rem, 5vw, 3rem);
   }
 
   .results {
