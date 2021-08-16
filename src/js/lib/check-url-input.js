@@ -13,6 +13,10 @@ function validateOnChange(event) {
   }
 }
 
+/**
+ * Shows the error message and highlighting
+ * @param      {string}  [message="Please enter a valid url"]  The error message
+ */
 export function showErrors(message = "Please enter a valid url") {
   errorField.classList.add("js-error");
   urlField.classList.add("js-error");
