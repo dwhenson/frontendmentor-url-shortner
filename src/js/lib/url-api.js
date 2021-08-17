@@ -1,5 +1,6 @@
 import { urlField, results } from "./../utils/elements";
 import { showErrors } from "./check-url-input";
+import { storeUrl } from "./stored-urls";
 
 /**
  * Renders an error if the api call fails to reach the endpoint
@@ -14,7 +15,7 @@ function fetchError(error) {
  * Renders the url to the page
  * @param      {array}  urls    The urls to render
  */
-function renderHTML(urls) {
+export function renderHTML(urls) {
   results.innerHTML += urls
     .map((url) => {
       return `
@@ -25,6 +26,8 @@ function renderHTML(urls) {
     </li>`;
     })
     .join("");
+  urlField.value = "";
+  urlField.focus();
 }
 
 /**
@@ -35,6 +38,7 @@ function checkData(data) {
   if (data.ok) {
     const url = [];
     renderHTML([...url, data.result]);
+    storeUrl(data.result);
   } else {
     showErrors(data.error);
     console.warn(data);
