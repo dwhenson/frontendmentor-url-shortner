@@ -26,6 +26,7 @@ export function renderHTML(urls) {
     </li>`;
     })
     .join("");
+  // Clear the input field and focus
   urlField.value = "";
   urlField.focus();
 }
@@ -36,10 +37,13 @@ export function renderHTML(urls) {
  */
 function checkData(data) {
   if (data.ok) {
+    // create and array and add the returned data
     const url = [];
     renderHTML([...url, data.result]);
+    // Add the returned data to local storage
     storeUrl(data.result);
   } else {
+    // If the link requested is disallowed display specific error
     showErrors(data.error);
     console.warn(data);
   }
@@ -49,7 +53,6 @@ function checkData(data) {
  * Fetches quotes from the API
  */
 export function fetchShortUrl() {
-  console.log("clicked");
   fetch(`https://api.shrtco.de/v2/shorten?url=${urlField.value}`)
     .then((response) => response.json())
     .then((data) => checkData(data))
