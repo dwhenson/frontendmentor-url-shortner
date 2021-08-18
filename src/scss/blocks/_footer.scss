@@ -11,6 +11,8 @@
 
   .logo {
     margin-inline: auto;
+    max-inline-size: none;
+    text-align: start;
 
     @include respond-to("medium") {
       margin-inline-start: 0;
@@ -18,9 +20,10 @@
   }
 
   > .split {
+    // flex: auto;
+    // align-items: flex-start;
+    // justify-content: space-between;
     gap: 3rem;
-    justify-content: space-between;
-    align-items: flex-start;
   }
 
   nav {
@@ -42,12 +45,14 @@
 
   .icons ul {
     flex-direction: row;
+    flex-grow: 0;
     align-items: center;
     justify-content: center;
     gap: 0.75rem;
 
     @include respond-to("medium") {
       justify-content: flex-end;
+      margin-inline-start: 0;
     }
 
     li {
