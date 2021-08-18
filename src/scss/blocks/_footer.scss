@@ -20,14 +20,11 @@
   }
 
   > .split {
-    // flex: auto;
-    // align-items: flex-start;
-    // justify-content: space-between;
     gap: 3rem;
   }
 
   nav {
-    gap: 2rem;
+    gap: 3rem;
 
     li:first-of-type {
       font-weight: 700;

@@ -1,6 +1,6 @@
 .boost {
-  // FIXME side scrolling - scroll bar issues?
-  inline-size: 100vw;
+  /* HACK - why does 100vw cause overflow? */
+  inline-size: 99.5vw;
   padding-block-start: 4rem;
   padding-block-end: 4rem;
   margin-inline-start: calc(50% - 50vw);

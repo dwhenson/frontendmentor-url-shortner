@@ -1,9 +1,10 @@
 .intro {
+  /* HACK - why does 100vw cause overflow? */
+  inline-size: 99.5vw;
   padding-block-start: 3rem;
   padding-block-end: 9rem;
-  background-color: var(--clr-neutral-100);
-  inline-size: 100vw;
   margin-inline-start: calc(50% - 50vw);
+  background-color: var(--clr-neutral-100);
 
   > div {
     flex-direction: column-reverse;
