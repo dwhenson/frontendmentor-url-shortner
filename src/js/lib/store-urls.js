@@ -1,4 +1,4 @@
-import { renderHTML } from "./url-api";
+import { renderHTML } from "./fetch-url";
 
 /**
  * Check if there's session data and render if so

@@ -77,11 +77,12 @@
             name="url"
             id="url"
             required
-            aria-describedby="error"
+            aria-describedby="message"
             placeholder="Shorten a link here..."
+            aria-live="polite"
           />
           <button id="submit" class="cta">Shorten It!</button>
-        <div id="error" class="error" aria-live="polite"></div>
+        <div id="message" class="error" aria-live="polite"></div>
         </form>
         <ul id="results" class="flow-content results" role="list">
         </ul>

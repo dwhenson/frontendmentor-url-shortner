@@ -1,6 +1,6 @@
-import { urlField, results } from "./../utils/elements";
-import { showErrors } from "./check-url-input";
-import { storeUrl } from "./stored-urls";
+import { urlField, results, submitForm } from "./../utils/elements";
+import { showErrors } from "./check-url";
+import { storeUrl } from "./store-urls";
 
 /**
  * Renders an error if the api call fails to reach the endpoint
@@ -22,7 +22,7 @@ export function renderHTML(urls) {
     <li class="split container">
       <p class="original">${url.original_link}</p>
       <p class="short">${url.full_short_link}</p>
-      <button class="cta">Copy</button>
+      <button class="cta" aria-live="polite">Copy</button>
     </li>`;
     })
     .join("");
@@ -36,6 +36,7 @@ export function renderHTML(urls) {
  * @param      {object}  data    The data from the api call
  */
 function checkData(data) {
+  submitForm.textContent = "Shorten it!";
   if (data.ok) {
     // create and array and add the returned data
     const url = [];
@@ -53,6 +54,7 @@ function checkData(data) {
  * Fetches quotes from the API
  */
 export function fetchShortUrl() {
+  submitForm.textContent = "Shortening...";
   fetch(`https://api.shrtco.de/v2/shorten?url=${urlField.value}`)
     .then((response) => response.json())
     .then((data) => checkData(data))

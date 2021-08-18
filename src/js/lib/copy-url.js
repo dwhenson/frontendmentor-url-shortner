@@ -1,7 +1,12 @@
+/**
+ * Copy the targeted text to the clipboard
+ * @param      {object}   event   The event
+ * @return     {Promise}  The text written to the clipboard
+ */
 export async function copyLink(event) {
   if (!navigator.clipboard) {
     alert(
-      "Sorry your browser doesn't allow copying. You'll have to do it manualy instead"
+      "Sorry your browser doesn't allow copying. You'll have to do it manually instead"
     );
     return;
   }

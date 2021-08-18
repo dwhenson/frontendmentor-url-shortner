@@ -1,6 +1,6 @@
-import { urlField, errorField } from "./../utils/elements";
+import { urlField, messageField } from "./../utils/elements";
 import validateUrl from "./../utils/validate-url";
-import { fetchShortUrl } from "./url-api";
+import { fetchShortUrl } from "./fetch-url";
 
 /**
  * Check input for valid email on key down
@@ -8,8 +8,9 @@ import { fetchShortUrl } from "./url-api";
  */
 function validateOnChange(event) {
   if (validateUrl(urlField.value)) {
-    errorField.classList.remove("js-error");
+    messageField.classList.remove("js-error");
     urlField.classList.remove("js-error");
+    urlField.setAttribute("aria-invalid", false);
   }
 }
 
@@ -18,9 +19,10 @@ function validateOnChange(event) {
  * @param      {string}  [message="Please enter a valid url"]  The error message
  */
 export function showErrors(message = "Please enter a valid url") {
-  errorField.classList.add("js-error");
+  messageField.classList.add("js-error");
   urlField.classList.add("js-error");
-  errorField.textContent = message;
+  urlField.setAttribute("aria-invalid", true);
+  messageField.textContent = message;
   urlField.focus();
 }
 
