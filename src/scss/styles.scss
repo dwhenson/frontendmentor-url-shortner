@@ -40,6 +40,14 @@ body {
   }
 }
 
+footer {
+  margin-block-start: 4rem;
+
+  @include respond-to("medium") {
+    margin-block-start: 6rem;
+  }
+}
+
 h1,
 h2,
 h3 {
