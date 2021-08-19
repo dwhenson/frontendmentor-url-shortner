@@ -1,5 +1,5 @@
 import { urlField, messageField } from "./../utils/elements";
-import validateUrl from "./../utils/validate-url";
+import { validateUrl } from "./../utils/validate-url";
 import { fetchShortUrl } from "./fetch-url";
 
 /**
