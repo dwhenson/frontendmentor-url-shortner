@@ -32,13 +32,16 @@
     border-radius: 0.5em;
   }
 
-  .error {
-    position: absolute;
+  .message {
     display: none;
     inset-block-end: 0;
-    max-inline-size: 95%;
-    padding-inline-start: 1rem;
-    margin-block-end: 1rem;
+
+    @include respond-to("medium") {
+      position: absolute;
+      max-inline-size: 95%;
+      padding-inline-start: 1rem;
+      margin-block-end: 1rem;
+    }
   }
 
   .results {

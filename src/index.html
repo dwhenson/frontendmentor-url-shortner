@@ -18,8 +18,6 @@
 
   <body class="center-content">
     <header class="center-content header">
-      <div class="">
-        <!-- CHECK if needed-->
         <a href="#main" class="skip-link">Skip to content</a>
         <div class="split container site-head__inner">
           <a href="/" aria-label="Shortly" class="logo">
@@ -42,7 +40,6 @@
             </nav>
           </burger-menu>
         </div>
-      </div>
     </header>
 
     <main id="main" class="flow-section">
@@ -80,8 +77,8 @@
             placeholder="Shorten a link here..."
             aria-live="polite"
           />
+        <div id="message" class="message" aria-live="polite"></div>
           <button id="submit" class="cta">Shorten It!</button>
-        <div id="message" class="error" aria-live="polite"></div>
         </form>
         <ul id="results" class="flow-content results" role="list">
         </ul>
