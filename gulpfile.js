@@ -118,7 +118,7 @@ function server() {
 
 // Delete dist folder
 function cleanTask() {
-  return src("./dist", { read: false }).pipe(clean());
+  return src("./dist", { allowEmpty: true, read: false }).pipe(clean());
 }
 
 // Copy html files to dist
