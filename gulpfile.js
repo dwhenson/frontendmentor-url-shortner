@@ -128,7 +128,7 @@ function htmlProductionTask() {
     .pipe(dest(paths.html.dest));
 }
 
-// Combine and compile to CSS, autoprefix? and minify
+// Combine and compile to CSS, and minify
 function cssProductionTask() {
   return src(paths.scss.src)
     .pipe(sass.sync().on("error", sass.logError))
