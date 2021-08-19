@@ -1,11 +1,17 @@
 const { src, dest, series, parallel, watch } = require("gulp");
+// SASS
 const sass = require("gulp-sass")(require("sass"));
-const browserSync = require("browser-sync").create();
 // Create esbuild incremental workflow
 const { createGulpEsbuild } = require("gulp-esbuild");
 const gulpEsbuild = createGulpEsbuild({ incremental: true, piping: true });
-// Notify
-var notify = require("gulp-notify");
+// Notifications and server
+const browserSync = require("browser-sync").create();
+const notify = require("gulp-notify");
+// Production
+const clean = require("gulp-clean");
+const htmlmin = require("gulp-htmlmin");
+const cleanCSS = require("gulp-clean-css");
+const imagemin = require("gulp-imagemin");
 
 // Set up file paths
 const paths = {
@@ -110,11 +116,63 @@ function server() {
 /* Production
    ================================================== */
 
-// Minify html and add source maps?
-// Clean and minify css with CSS, and add sourcemap.
-// Minify js and add source map?
-// Minify images and svgs
-// Anything with fonts?
+// Delete dist folder
+function cleanTask() {
+  return src("./dist", { read: false }).pipe(clean());
+}
+
+// Copy html files to dist
+function htmlProductionTask() {
+  return src(paths.html.src)
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(dest(paths.html.dest));
+}
+
+// Combine and compile to CSS, autoprefix? and minify
+function cssProductionTask() {
+  return src(paths.scss.src)
+    .pipe(sass.sync().on("error", sass.logError))
+    .pipe(cleanCSS({ level: 2 }))
+    .pipe(dest(paths.scss.dest));
+}
+
+// Combine modules and minify code
+function jsProductionTask() {
+  return src(paths.js.root)
+    .pipe(
+      gulpEsbuild({
+        bundle: true,
+        minify: true,
+      })
+    )
+    .pipe(dest(paths.js.dest));
+}
+
+// Copy image compress images and svgs
+function imgProductionTask() {
+  return src(paths.img.src)
+    .pipe(
+      imagemin(
+        [
+          imagemin.gifsicle({ interlaced: true }),
+          imagemin.mozjpeg({ quality: 60, progressive: true }),
+          imagemin.optipng({ optimizationLevel: 5, interlaced: null }),
+          imagemin.svgo({
+            plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
+          }),
+        ],
+        { verbose: true }
+      )
+    )
+    .pipe(dest(paths.img.dest));
+}
+
+// Copy font files to dist
+function fontProductionTask() {
+  return src(paths.fonts.src).pipe(dest(paths.fonts.dest));
+}
+/* Exports
+/* ==================================================== */
 
 exports.default = series(
   parallel(
@@ -125,4 +183,13 @@ exports.default = series(
     fontDevelopmentTask
   ),
   server
+);
+
+exports.production = series(
+  cleanTask,
+  htmlProductionTask,
+  cssProductionTask,
+  jsProductionTask,
+  imgProductionTask,
+  fontProductionTask
 );
