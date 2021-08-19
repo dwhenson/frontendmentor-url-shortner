@@ -190,6 +190,6 @@ exports.production = series(
   htmlProductionTask,
   cssProductionTask,
   imgProductionTask,
-  fontProductionTask
-  jsProductionTask,
+  fontProductionTask,
+  jsProductionTask
 );
