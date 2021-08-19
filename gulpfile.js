@@ -185,11 +185,17 @@ exports.default = series(
   server
 );
 
+function endTask() {
+  console.log("end");
+  return "end";
+}
+
 exports.production = series(
   cleanTask,
   htmlProductionTask,
   cssProductionTask,
   jsProductionTask,
-  // imgProductionTask,
-  fontProductionTask
+  imgProductionTask,
+  fontProductionTask,
+  endTask
 );
