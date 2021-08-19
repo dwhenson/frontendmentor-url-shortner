@@ -2,8 +2,9 @@ const { src, dest, series, parallel, watch } = require("gulp");
 // SASS
 const sass = require("gulp-sass")(require("sass"));
 // Create esbuild incremental workflow
-const { createGulpEsbuild } = require("gulp-esbuild");
-const gulpEsbuild = createGulpEsbuild({ incremental: true, piping: true });
+// const { createGulpEsbuild } = require("gulp-esbuild");
+const gulpEsbuild = require("gulp-esbuild");
+// const gulpEsbuild = createGulpEsbuild({ incremental: true, piping: true });
 // Notifications and server
 const browserSync = require("browser-sync").create();
 const notify = require("gulp-notify");
@@ -189,7 +190,7 @@ exports.production = series(
   cleanTask,
   htmlProductionTask,
   cssProductionTask,
-  imgProductionTask,
+  jsProductionTask,
   fontProductionTask,
-  jsProductionTask
+  imgProductionTask
 );
