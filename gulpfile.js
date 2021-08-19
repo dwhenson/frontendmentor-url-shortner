@@ -149,7 +149,7 @@ function jsProductionTask() {
 }
 
 // Copy image compress images and svgs
-function imgProductionTask() {
+function imgProductionTask(callback) {
   return src(paths.img.src)
     .pipe(
       imagemin(
@@ -165,6 +165,7 @@ function imgProductionTask() {
       )
     )
     .pipe(dest(paths.img.dest));
+  callback();
 }
 
 // Copy font files to dist
