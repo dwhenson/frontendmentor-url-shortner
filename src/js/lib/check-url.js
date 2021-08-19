@@ -1,6 +1,15 @@
 import { urlField, messageField } from "./../utils/elements";
-import { validateUrl } from "./../utils/validate-url";
+// import { validateUrl } from "./../utils/validate-url";
 import { fetchShortUrl } from "./fetch-url";
+
+/**
+ * Checks if a url is valid
+ * @param      {string}   The email
+ * @return     {boolean}  The result of the test
+ */
+function validateUrl(url) {
+  return /[\w#%+.:=@~-]{2,256}\.[a-z]{2,6}\b([\w#%&+./:=?@~-]*)/.test(url);
+}
 
 /**
  * Check input for valid email on key down
