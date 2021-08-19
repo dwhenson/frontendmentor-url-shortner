@@ -1,17 +1,12 @@
 const { src, dest, series, parallel, watch } = require("gulp");
-// SASS
-const sass = require("gulp-sass")(require("sass"));
-// Create esbuild incremental workflow
-// const { createGulpEsbuild } = require("gulp-esbuild");
-const gulpEsbuild = require("gulp-esbuild");
-// const gulpEsbuild = createGulpEsbuild({ incremental: true, piping: true });
-// Notifications and server
-const browserSync = require("browser-sync").create();
 const notify = require("gulp-notify");
-// Production
+const browserSync = require("browser-sync").create();
+var sourcemaps = require("gulp-sourcemaps");
 const clean = require("gulp-clean");
 const htmlmin = require("gulp-htmlmin");
+const sass = require("gulp-sass")(require("sass"));
 const cleanCSS = require("gulp-clean-css");
+const gulpEsbuild = require("gulp-esbuild");
 const imagemin = require("gulp-imagemin");
 
 // Set up file paths
@@ -125,15 +120,19 @@ function cleanTask() {
 // Copy html files to public
 function htmlProductionTask() {
   return src(paths.html.src)
+    .pipe(sourcemaps.init())
     .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(sourcemaps.write("."))
     .pipe(dest(paths.html.dest));
 }
 
 // Combine and compile to CSS, and minify
 function cssProductionTask() {
   return src(paths.scss.src)
+    .pipe(sourcemaps.init())
     .pipe(sass.sync().on("error", sass.logError))
     .pipe(cleanCSS({ level: 2 }))
+    .pipe(sourcemaps.write("."))
     .pipe(dest(paths.scss.dest));
 }
 
@@ -144,6 +143,7 @@ function jsProductionTask() {
       gulpEsbuild({
         bundle: true,
         minify: true,
+        sourcemap: "external",
       })
     )
     .pipe(dest(paths.js.dest));
