@@ -9,7 +9,7 @@
   > div {
     flex-direction: column-reverse;
     align-items: center;
-    gap: 2rem;
+    gap: 4rem;
 
     @include respond-to("medium") {
       flex-direction: row;
