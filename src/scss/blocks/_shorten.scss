@@ -4,7 +4,7 @@
     flex-wrap: wrap;
     padding: clamp(2rem, 5vw, 3rem);
     border-radius: 0.5em;
-    margin-block-start: -10.5rem;
+    margin-block-start: -14rem;
     background-color: var(--clr-primary-200);
     background-image: url("../../images/bg-shorten-mobile.svg");
     background-position: top right;
@@ -19,7 +19,7 @@
   input {
     flex-grow: 9999;
     max-inline-size: 100%;
-    padding: 0.5em 1em;
+    padding: 1em;
     border-radius: 0.5em;
 
     &::placeholder {

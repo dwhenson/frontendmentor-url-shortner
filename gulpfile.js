@@ -121,7 +121,14 @@ function cleanTask() {
 function htmlProductionTask() {
   return src(paths.html.src)
     .pipe(sourcemaps.init())
-    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(
+      htmlmin({
+        useShortDoctype: true,
+        removeComments: true,
+        collapseWhitespace: true,
+        minifyCSS: true,
+      })
+    )
     .pipe(sourcemaps.write("."))
     .pipe(dest(paths.html.dest));
 }

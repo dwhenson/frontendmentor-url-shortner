@@ -1,10 +1,12 @@
 .intro {
-  /* HACK - why does 100vw cause overflow? */
-  inline-size: 99.5vw;
-  padding-block-start: 3rem;
-  padding-block-end: 9rem;
+  inline-size: 100vw;
+  padding-block-end: 12rem;
   margin-inline-start: calc(50% - 50vw);
   background-color: var(--clr-neutral-100);
+
+  @include respond-to("medium") {
+    padding-block-start: 8rem;
+  }
 
   > div {
     flex-direction: column-reverse;
@@ -15,7 +17,19 @@
       flex-direction: row;
     }
 
+    .intro-text {
+      flex-basis: 15ch;
+    }
+
+    .intro-image {
+      svg {
+        position: relative;
+        max-inline-size: 100%;
+      }
+    }
+
     .cta {
+      padding: 1em 2em;
       margin-block-start: 2rem;
     }
   }

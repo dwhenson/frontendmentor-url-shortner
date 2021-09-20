@@ -2,16 +2,17 @@
     ================================================== */
 
 .footer {
-  padding-block: clamp(1rem, 5vw, 2rem);
-  background-color: var(--clr-neutral-400);
-  color: var(--clr-neutral-100);
   inline-size: 99.5vw;
   margin-inline-start: calc(50% - 50vw);
+  background-color: var(--clr-neutral-400);
+  color: var(--clr-neutral-100);
+  padding-block: clamp(1rem, 5vw, 2rem);
 
   .logo {
-    margin-inline: auto;
+    align-self: flex-start;
     max-inline-size: none;
     text-align: start;
+    margin-inline: auto;
 
     @include respond-to("medium") {
       margin-inline-start: 0;
