@@ -1,6 +1,7 @@
 .intro {
   inline-size: 100vw;
   padding-block-end: 12rem;
+  overflow-x: hidden;
   margin-inline-start: calc(50% - 50vw);
   background-color: var(--clr-neutral-100);
 
@@ -10,20 +11,24 @@
 
   > div {
     flex-direction: column-reverse;
+    grid-column: 2 / -1;
     align-items: center;
-    gap: 4rem;
+    gap: 2rem;
 
     @include respond-to("medium") {
       flex-direction: row;
     }
 
     .intro-text {
-      flex-basis: 15ch;
+      min-inline-size: 35ch;
+      max-inline-size: 40rem;
     }
 
     .intro-image {
+      padding-inline-end: 0;
+      margin-inline-end: -2rem;
+
       svg {
-        position: relative;
         max-inline-size: 100%;
       }
     }
