@@ -50,8 +50,8 @@ a {
   color: var(--clr-neutral-100);
 }
 
-// /* Burger menu
-//   ================================================== */
+/* Burger menu
+ ================================================== */
 
 /* Hamburger button creation */
 .burger-menu__trigger {
@@ -70,7 +70,7 @@ a {
   border-radius: 3px;
   margin-inline-start: -12px;
   background: var(--clr-neutral-300);
-  transition: transform 100ms ease-in-out;
+  transition: transform 400ms ease-in-out;
 }
 
 .burger-menu__bar {
@@ -103,14 +103,13 @@ a {
   cursor: pointer;
 }
 
-// CHECK: Check if need to disable scroll or not?
 // Hamburger menu panel size and positioning
 .burger-menu[enabled="true"] .burger-menu__panel {
   position: absolute;
   z-index: 1;
   visibility: hidden;
   opacity: 0;
-  inset-block-start: 3rem;
+  inset-block-start: 5rem;
   inset-inline-start: 0;
   inline-size: 100%;
   block-size: 100%;
@@ -121,7 +120,6 @@ a {
 }
 
 // Hamburger menu panel contents size and positioning
-// FIXME cta width in open panel
 .burger-menu[enabled="true"] .navigation {
   padding: 2rem;
   border-radius: 0.25em;
@@ -150,15 +148,19 @@ a {
 .burger-menu[enabled="true"][status="open"] .burger-menu__panel {
   visibility: visible;
   opacity: 1;
-  transition: opacity 100ms ease;
+  transition: opacity 400ms ease;
 }
 
 .burger-menu[enabled="true"][status="closed"] .burger-menu__panel > * {
   opacity: 0;
+  transform: translateY(5rem);
 }
 
 .burger-menu[enabled="true"][status="open"] .burger-menu__panel > * {
   opacity: 1;
+  transform: translateY(0);
+  transition: transform 500ms cubic-bezier(0.17, 0.67, 0, 0.87) 200ms,
+    opacity 500ms ease 300ms;
 }
 
 .burger-menu[enabled="true"][status="open"] .burger-menu__bar::before {
@@ -174,5 +176,5 @@ a {
 .burger-menu[enabled="true"][status="open"] .burger-menu__bar {
   border-color: transparent;
   background: transparent;
-  transform: rotate(90deg);
+  transform: rotate(180deg);
 }

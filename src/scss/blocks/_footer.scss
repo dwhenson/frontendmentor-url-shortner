@@ -56,6 +56,10 @@
       flex: revert;
     }
 
+    li path {
+      transition: fill 250ms ease-out;
+    }
+
     li:hover path {
       fill: var(--clr-primary-100);
     }

@@ -7,7 +7,9 @@ import { storeUrl } from "./store-urls";
  * @param      {object}  error   The error object
  */
 function fetchError(error) {
-  showErrors("Service is down - please try back later");
+  showErrors(
+    "Service is down or you've reached the request limit - please try back later"
+  );
   console.warn(error);
 }
 
@@ -19,7 +21,7 @@ export function renderHTML(urls) {
   results.innerHTML += urls
     .map((url) => {
       return `
-    <li class="split container">
+    <li class="split container" style="--delay: ${index * 50}ms">
       <p class="original">${url.original_link}</p>
       <p class="short">${url.full_short_link}</p>
       <button class="cta" aria-live="polite">Copy</button>
@@ -54,7 +56,7 @@ function checkData(data) {
  * Fetches quotes from the API
  */
 export function fetchShortUrl() {
-  submitForm.textContent = "Shortening...";
+  submitForm.innerHTML = `Shortening<span class="ellipsis"><span>.</span><span>.</span><span>.</span></span>`;
   fetch(`https://api.shrtco.de/v2/shorten?url=${urlField.value}`)
     .then((response) => response.json())
     .then((data) => checkData(data))

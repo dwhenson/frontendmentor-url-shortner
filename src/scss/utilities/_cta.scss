@@ -4,12 +4,14 @@
   border: 0;
   border-radius: 2em;
   background-color: var(--clr-primary-100);
+  transition: transform 350ms cubic-bezier(0, 0.26, 0.13, 1.55), color 150ms ease-in-out;
   font-weight: 700;
   color: var(--clr-neutral-200);
   cursor: pointer;
 
   &:hover {
     background-color: hsla(180, 66%, 49%, 0.75);
+    transform: scale(1.05);
     color: var(--clr-neutral-100);
   }
 
