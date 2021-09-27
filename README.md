@@ -32,8 +32,8 @@ Your users should be able to:
 I would very much welcome advice on the following issues:
 
 - ⚠️ I have failed get the final of the three svg icons working properly. I spent a long time on this and still failed. I need to have an approach to standardize icons of different sizes.
-- ⚠️ I have failed to off-set the introduction section banner image. I tried `translate` and positioning, but it always resulted in horizontal scrolling. Overflow hidden would work but didn't look good on larger screens.
-- ⚠️ I suspect that my gulp tasks could be improved and the structure of my gulp file can be made more efficient. I plan to stick with Gulp for a while, but am thinking just working directly with npm scripts might be the best long term solution for me.
+- ⚠️ I have failed to off-set the introduction section banner image. I tried `translate` and positioning, but it always resulted in horizontal scrolling. I have not got an approach to deal with this kind of issue that I can fall back to. Any suggestions would be very much appreciated. 
+- ⚠️ There's an issue with the outline styles on the links inside the main element. Again, I haven't been able to identify the problem here. I have some standard code that usually works fine. I can't workout why it is not working this time around. Suggestions here would be gratefully received! 
 
 ## Future learning
 
