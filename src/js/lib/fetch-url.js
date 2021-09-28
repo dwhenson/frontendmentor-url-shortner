@@ -7,9 +7,7 @@ import { storeUrl } from "./store-urls";
  * @param      {object}  error   The error object
  */
 function fetchError(error) {
-  showErrors(
-    "Service is down or you've reached the request limit - please try back later"
-  );
+  showErrors("Service is down - please try back later");
   console.warn(error);
 }
 
@@ -21,7 +19,7 @@ export function renderHTML(urls) {
   results.innerHTML += urls
     .map((url) => {
       return `
-    <li class="split container" style="--delay: ${index * 50}ms">
+    <li class="split container">
       <p class="original">${url.original_link}</p>
       <p class="short">${url.full_short_link}</p>
       <button class="cta" aria-live="polite">Copy</button>
