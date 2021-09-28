@@ -24,21 +24,22 @@ Your users should be able to:
 
   You can text this will the url: https://shrtco.de/ - but beware the api is very slow to response
 
-- 💡 I ran into a couple of specificity issues for the first time in a long while on this one. I think this could be avoided if I pay more attention to how I scope and next selectors.
 - 💡 This is the first time using a 'build step' that I created myself. This also took a long time for me to get my head around. Gulp seems fine and I like that it's in JS but I already ran into npm version issues so I am a little afraid of the complexity it brings.
+- 💡 I have worked on applying some animations and transistions throughout the page, but this was an after thought. I need to plan these from the outset as they can influence each others working and making them work can impact the HTML structure.
 
 ## Problems
 
 I would very much welcome advice on the following issues:
 
-- ⚠️ I have failed get the final of the three svg icons working properly. I spent a long time on this and still failed. I need to have an approach to standardize icons of different sizes.
-- ⚠️ I have failed to off-set the introduction section banner image. I tried `translate` and positioning, but it always resulted in horizontal scrolling. I have not got an approach to deal with this kind of issue that I can fall back to. Any suggestions would be very much appreciated. 
-- ⚠️ There's an issue with the outline styles on the links inside the main element. Again, I haven't been able to identify the problem here. I have some standard code that usually works fine. I can't workout why it is not working this time around. Suggestions here would be gratefully received! 
+- ⚠️ I have failed get the final of the three svg icons working properly. I spent a long time on this and still failed. I need to have an approach to standardize icons of different sizes. Any suggestions on how to do this are most welcome.
+- ⚠️ I have struggled to off-set the introduction section banner image. I tried `translate` and positioning, but it always resulted in horizontal scrolling. I have not got an approach to deal with this kind of issue that I can fall back to. Any suggestions would be very much appreciated.
+- ⚠️ When I add a single result the JS renders the entire containing element meaning that all the `li` elements animate in again rather than only the one just added. I have had this issue a couple of times now and would appreciate any advice on how to make a change that affects just the item added.
 
 ## Future learning
 
 - 🙇‍♂️ Get comfortable with svgs and how to manipulate their sizes.
 - 🙇‍♂️ Continue to explore Gulp and build steps.
+- 🙇‍♂️ Keep learning animations.
 
 ## Resources
 
