@@ -16,16 +16,15 @@ function fetchError(error) {
  * @param      {array}  urls    The urls to render
  */
 export function renderHTML(urls) {
-  results.innerHTML += urls
-    .map((url) => {
-      return `
-    <li class="split container">
-      <p class="original">${url.original_link}</p>
-      <p class="short">${url.full_short_link}</p>
-      <button class="cta" aria-live="polite">Copy</button>
-    </li>`;
-    })
-    .join("");
+  const list = document.createElement("li");
+  list.className = "split container";
+  list.innerHTML = urls.map(
+    (url) => `
+    <p class="original">${url.original_link}</p>
+    <p class="short">${url.full_short_link}</p>
+    <button class="cta" aria-live="polite">Copy</button>`
+  );
+  results.append(list);
   // Clear the input field and focus
   urlField.value = "";
   urlField.focus();

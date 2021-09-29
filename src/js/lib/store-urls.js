@@ -1,5 +1,4 @@
-import { renderHTML } from "./fetch-url";
-
+import { results } from "./../utils/elements";
 /**
  * Check if there's session data and render if so
  */
@@ -7,7 +6,16 @@ export function storedUrls() {
   if (!sessionStorage.getItem("urls")) return;
   const fromStorage = JSON.parse(sessionStorage.getItem("urls"));
   if (fromStorage.length > 0) {
-    renderHTML(fromStorage);
+    results.innerHTML += fromStorage
+      .map((url) => {
+        return `
+      <li class="split container">
+        <p class="original">${url.original_link}</p>
+        <p class="short">${url.full_short_link}</p>
+        <button class="cta" aria-live="polite">Copy</button>
+      </li>`;
+      })
+      .join("");
   }
 }
 
