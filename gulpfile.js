@@ -182,7 +182,7 @@ function fontProductionTask() {
 /* Exports
 /* ==================================================== */
 
-exports.default = series(
+exports.development = series(
   parallel(
     htmlDevelopmentTask,
     cssDevelopmentTask,

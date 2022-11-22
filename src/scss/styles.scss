@@ -10,23 +10,6 @@
 /* Base Styles
    ================================================== */
 
-@font-face {
-  font-family: "poppins";
-  font-weight: 400;
-  font-display: swap;
-  font-style: normal;
-  src: local("Poppins-Regular"),
-    url("../fonts/poppins/Poppins-Regular.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "poppins";
-  font-weight: 700;
-  font-display: swap;
-  font-style: normal;
-  src: local("Poppins-Bold"), url("../fonts/poppins/Poppins-Bold.ttf") format("truetype");
-}
-
 body {
   overflow-x: hidden;
   background-color: var(--clr-neutral-200);
@@ -34,7 +17,7 @@ body {
   font-size: var(--step-0);
   font-weight: 400;
   text-align: center;
-  color: var(--clr-neutral-300);
+  color: var(--clr-neutral-400);
 
   @include respond-to("medium") {
     text-align: start;
@@ -77,7 +60,7 @@ a {
   transition: color 250ms ease-out;
   font-weight: 700;
   text-decoration: none;
-  color: var(--clr-neutral-300);
+  color: var(--clr-neutral-400);
 
   &:hover {
     color: var(--clr-neutral-400);

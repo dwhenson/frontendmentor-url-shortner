@@ -6,6 +6,7 @@
   "name": "url-shortener",
   "main": "index.html",
   "scripts": {
+    "dev": "npx gulp development",
     "build": "npx gulp production"
   },
   "license": "ISC",
