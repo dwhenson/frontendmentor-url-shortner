@@ -16,8 +16,8 @@
   Utilities
   ================================================== */
 
-@import "utilities/outline";
 @import "utilities/skip-link";
+@import "utilities/outline";
 @import "utilities/visually-hidden";
 @import "utilities/cta";
 
@@ -92,7 +92,6 @@ a {
   text-decoration: none;
   color: var(--clr-neutral-400);
 
-  &:focus,
   &:hover {
     color: var(--clr-primary-100);
   }

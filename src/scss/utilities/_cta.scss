@@ -14,8 +14,7 @@
     color: var(--clr-neutral-200);
   }
 
-  &:hover,
-  :focus {
+  &:hover {
     background-color: hsla(185, 57%, 42%, 1);
     transform: scale(1.05);
     color: var(--clr-neutral-100);
