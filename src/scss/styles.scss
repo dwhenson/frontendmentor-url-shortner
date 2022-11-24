@@ -1,11 +1,41 @@
 @import "reset";
+@import "abstracts/variables";
+@import "abstracts/breakpoints";
+
+/* ==================================================
+  Composition
+  ================================================== */
+
+@import "composition/align-content";
+@import "composition/container";
+@import "composition/flow-content";
+@import "composition/flow-section";
+@import "composition/split";
+
+/* ==================================================
+  Utilities
+  ================================================== */
+
+@import "utilities/outline";
+@import "utilities/skip-link";
+@import "utilities/visually-hidden";
+@import "utilities/cta";
+
+/* ==================================================
+   Blocks
+   ================================================== */
+
+@import "blocks/header";
+@import "blocks/banner";
+@import "blocks/submit-url";
+@import "blocks/statistics";
+@import "blocks/features";
+@import "blocks/boost";
+@import "blocks/footer";
 
 /* ==================================================
   Global Styles
   ================================================== */
-
-@import "abstracts/variables";
-@import "abstracts/breakpoints";
 
 /* Base Styles
    ================================================== */
@@ -62,38 +92,8 @@ a {
   text-decoration: none;
   color: var(--clr-neutral-400);
 
+  &:focus,
   &:hover {
-    color: var(--clr-neutral-400);
+    color: var(--clr-primary-100);
   }
 }
-
-/* ==================================================
-  Composition
-  ================================================== */
-
-@import "composition/align-content";
-
-/* ==================================================
-  Utilities
-  ================================================== */
-
-@import "utilities/container";
-@import "utilities/cta";
-@import "utilities/flow-content";
-@import "utilities/flow-section";
-@import "utilities/outline";
-@import "utilities/skip-link";
-@import "utilities/split";
-@import "utilities/visually-hidden";
-
-/* ==================================================
-   Blocks
-   ================================================== */
-
-@import "blocks/header";
-@import "blocks/intro";
-@import "blocks/shorten";
-@import "blocks/statistics";
-@import "blocks/features";
-@import "blocks/boost";
-@import "blocks/footer";

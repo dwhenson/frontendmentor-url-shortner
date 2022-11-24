@@ -50,9 +50,9 @@ Your users should be able to:
 
 ### Future learning
 
-- 🙇‍♂️ Get comfortable with svgs and how to manipulate their sizes.
-- 🙇‍♂️ Continue to explore Gulp and build steps.
-- 🙇‍♂️ Keep learning animations.
+- Get comfortable with svgs and how to manipulate their sizes, and internal properties.
+- Continue to explore Gulp, and learn more about more modern (and hopefully simpler) build steps.
+- Keep learning animations. Beyond just the code I need to get a feel for how to make them feel natural.
 
 ## Resources
 
