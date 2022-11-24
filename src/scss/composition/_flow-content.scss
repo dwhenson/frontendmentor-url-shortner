@@ -1,0 +1,9 @@
+/* Add vertical rhythm inside elements */
+
+.flow-content > * + * {
+  margin-block-start: calc(var(--spacer) * 1);
+
+  // @include respond-to("medium") {
+  //   margin-block-start: calc(var(--spacer) * 1.5);
+  // }
+}

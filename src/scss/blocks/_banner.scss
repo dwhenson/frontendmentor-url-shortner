@@ -1,0 +1,41 @@
+.banner {
+  inline-size: 100vw;
+  padding-block-end: 12rem;
+  overflow-x: hidden;
+  margin-inline-start: calc(50% - 50vw);
+  background-color: var(--clr-neutral-100);
+
+  @include respond-to("medium") {
+    padding-block-start: 8rem;
+  }
+
+  > div {
+    flex-direction: column-reverse;
+    grid-column: 2 / -1;
+    align-items: center;
+    gap: 2rem;
+
+    @include respond-to("medium") {
+      flex-direction: row;
+    }
+
+    .intro-text {
+      min-inline-size: 35ch;
+      max-inline-size: 40rem;
+    }
+
+    .intro-image {
+      padding-inline-end: 0;
+      margin-inline-end: -2rem;
+
+      svg {
+        max-inline-size: 100%;
+      }
+    }
+
+    .cta {
+      padding: 1em 2em;
+      margin-block-start: 2rem;
+    }
+  }
+}
